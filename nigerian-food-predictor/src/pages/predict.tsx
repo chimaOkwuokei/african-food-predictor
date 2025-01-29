@@ -27,7 +27,7 @@ export function Predict(){
                 formData.append("file", fileInput.files[0]);
             }
 
-            const response = await fetch('https://african-food-predictor-1.onrender.com/predict', {
+            const response = await fetch('https://african-food-predictor-1.onrender.com/predict',{
                 method: 'POST',
                 body: formData,
             });
