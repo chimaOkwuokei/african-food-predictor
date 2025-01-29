@@ -58,6 +58,13 @@ def predict(image_bytes):
     _, predicted = torch.max(outputs, 1)
     return class_labels[predicted.item()]
 
+
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"message": "API is running!"}), 200
+
+
+
 @app.route('/predict', methods=['POST'])
 def predict_route():
     if 'file' not in request.files:
