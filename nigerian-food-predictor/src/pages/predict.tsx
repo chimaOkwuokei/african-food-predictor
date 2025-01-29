@@ -53,7 +53,32 @@ export function Predict() {
         }
     };
 
+    // const handlePredict = async () => {
+    //     if (!image) return;
 
+    //     setLoading(true);
+    //     setPrediction("");
+
+    //     try {
+    //         const formData = new FormData();
+    //         const fileInput = document.getElementById('image-upload') as HTMLInputElement;
+    //         if (fileInput.files?.[0]) {
+    //             formData.append("file", fileInput.files[0]);
+    //         }
+
+    //         const response = await fetch('https://african-food-predictor-1.onrender.com/predict',{
+    //             method: 'POST',
+    //             body: formData,
+    //         });
+
+    //         const data = await response.json();
+    //         setPrediction(data.prediction);
+    //     } catch (error) {
+    //         console.error("Error during prediction:", error);
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-white">
