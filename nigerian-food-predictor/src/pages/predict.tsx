@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import cameraIcon from "@/assets/camera.svg";
 
-export const Predict = () => {
+export function Predict(){
     const [image, setImage] = useState<string | null>(null);
     const [prediction, setPrediction] = useState("");
     const [loading, setLoading] = useState(false);
