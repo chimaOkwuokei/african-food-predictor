@@ -31,7 +31,8 @@ export function Predict() {
                 return;
             }
 
-            const response = await fetch("https://african-food-predictor-1.onrender.com/predict", {
+            // Updated URL to Hugging Face API
+            const response = await fetch("https://Chima-O-nigerian-food-api.hf.space/predict", {
                 method: "POST",
                 body: formData,
                 headers: {
@@ -52,6 +53,7 @@ export function Predict() {
             setLoading(false);
         }
     };
+
 
     // const handlePredict = async () => {
     //     if (!image) return;
