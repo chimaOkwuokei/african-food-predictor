@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import cameraIcon from "@/assets/camera.svg";
 
-export function Predict(){
+export function Predict() {
     const [image, setImage] = useState<string | null>(null);
     const [prediction, setPrediction] = useState("");
     const [loading, setLoading] = useState(false);
@@ -25,12 +25,24 @@ export function Predict(){
             const fileInput = document.getElementById('image-upload') as HTMLInputElement;
             if (fileInput.files?.[0]) {
                 formData.append("file", fileInput.files[0]);
+            } else {
+                console.error("No file selected.");
+                setLoading(false);
+                return;
             }
 
-            const response = await fetch('https://african-food-predictor-1.onrender.com/predict',{
-                method: 'POST',
+            const response = await fetch("https://african-food-predictor-1.onrender.com/predict", {
+                method: "POST",
                 body: formData,
+                headers: {
+                    "Accept": "application/json"
+                },
             });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Server responded with ${response.status}: ${errorText}`);
+            }
 
             const data = await response.json();
             setPrediction(data.prediction);
@@ -40,6 +52,7 @@ export function Predict(){
             setLoading(false);
         }
     };
+
 
 
     return (
@@ -80,8 +93,8 @@ export function Predict(){
                         onClick={handlePredict}
                         disabled={!image || loading}
                         className={`${loading
-                                ? "bg-green-400"
-                                : "bg-green-600 hover:bg-green-700"
+                            ? "bg-green-400"
+                            : "bg-green-600 hover:bg-green-700"
                             } text-white rounded-lg px-4 py-2`}
                     >
                         {loading ? (
