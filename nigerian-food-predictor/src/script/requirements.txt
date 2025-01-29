@@ -1,12 +1,11 @@
 Flask
 joblib
-flask_cors
+flask-cors
 pandas
 numpy
 gunicorn
 scikit-learn
-cors
 torch
-torchivision
-PIL
-io
+torchvision
+Pillow
+io  # Only if you need `io`, but it's a built-in module
