@@ -75,4 +75,15 @@ def predict_route():
     return jsonify({'prediction': prediction})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    import os
+    
+    # Get the port from environment variables (default to 5000)
+    port = int(os.environ.get("PORT", 5000))
+    
+    # Check if running in production (Gunicorn sets 'GUNICORN_CMD_ARGS')
+    if "GUNICORN_CMD_ARGS" in os.environ:
+        # Running with Gunicorn, so do nothing (Gunicorn will call `app`)
+        pass
+    else:
+        # Running locally, so use Flask's built-in server
+        app.run(host="0.0.0.0", port=port, debug=True)
