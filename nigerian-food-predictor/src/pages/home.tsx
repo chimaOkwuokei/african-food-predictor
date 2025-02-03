@@ -67,7 +67,7 @@ export function Home() {
       {/* Team Section */}
       <section className="p-10 py-16 bg-white">
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
-          Meet the Team
+          Meet the Contributors
         </h2>
         <div className="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {team.map((member, index) => (
