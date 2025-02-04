@@ -21,9 +21,6 @@ const UserHeader: React.FC = () => {
           </a>
 
         </div>
-        <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-          <span className="text-blue-800 font-bold text-lg">👤</span>
-        </div>
 
         {/* Hamburger Icon (small screens) */}
         <div className="lg:hidden">
