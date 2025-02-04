@@ -5,7 +5,7 @@ const UserHeader: React.FC = () => {
 
   return (
     <nav className="bg-gradient-to-r from-green-800 to-[#013c05] text-white p-4">
-      <div className="max-w-screen-xl mx-auto flex items-center justify-between">
+      <div className="max-w-screen-xl mx-auto flex items-center justify-center">
         {/* Logo */}
         <a href="/" className="flex items-center space-x-2">
           {/* <img src={logo} alt="E-learn" className="h-6" /> */}
